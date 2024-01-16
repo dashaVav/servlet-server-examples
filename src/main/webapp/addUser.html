@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function submitForm() {
+            // Собираем данные из формы
+            var name = document.getElementsByName("name")[0].value;
+            var surname = document.getElementsByName("surname")[0].value;
+            var salary = document.getElementsByName("salary")[0].value;
+
+            // Создаем JSON-объект
+            var jsonData = {
+                name: name,
+                surname: surname,
+                salary: salary
+            };
+
+            // Преобразуем JSON-объект в строку
+            var jsonString = JSON.stringify(jsonData);
+
+            // Создаем скрытое поле в форме и помещаем в него JSON-строку
+            var hiddenInput = document.createElement("input");
+            hiddenInput.setAttribute("type", "hidden");
+            hiddenInput.setAttribute("name", "jsonData");
+            hiddenInput.setAttribute("value", jsonString);
+
+            // Добавляем скрытое поле к форме
+            document.forms[0].appendChild(hiddenInput);
+
+            // Отправляем форму
+            document.forms[0].submit();
+        }
+    </script>
+</head>
+<body>
+<form method="post" action="add" onsubmit="submitForm(); return false;">
+    <label>Имя:
+        <input type="text" name="name"><br/>
+    </label>
+    <label>Фамилия:
+        <input type="text" name="surname"><br/>
+    </label>
+    <label>Зарплата:
+        <input type="text" name="salary"><br/>
+    </label>
+    <button type="submit">Создать</button>
+</form>
+<a href="index.jsp">Домой</a>
+</body>
+</html>
