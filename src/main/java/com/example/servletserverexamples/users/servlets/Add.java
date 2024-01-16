@@ -1,5 +1,6 @@
 package com.example.servletserverexamples.users.servlets;
 
+import com.example.servletserverexamples.JsonUtils;
 import com.example.servletserverexamples.users.logic.Model;
 import com.example.servletserverexamples.users.logic.User;
 import com.google.gson.Gson;

@@ -1,4 +1,4 @@
-package com.example.servletserverexamples.users.servlets;
+package com.example.servletserverexamples;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
